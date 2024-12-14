@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Hotel GST Invoice Generator</title>
+    <meta name="description" content="Generate hotel invoices with customizable details including GST calculations and download them as images. Perfect for hotel revenue management and accounting.">
+    <meta name="keywords" content="hotel invoice generator, GST calculations, hotel revenue, invoice download, hotel accounting, room charges, hotel billing tool">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f3f5;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            min-width: 320px;
+        }
+
+        h1, h2, h3 {
+            color: #4CAF50;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            max-width: 1100px;
+            flex-wrap: wrap;
+        }
+
+        .ad-space {
+            flex: 1;
+            background-color: #e1e1e1;
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .content {
+            flex: 3;
+            max-width: 800px;
+            min-width: 300px;
+        }
+
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px;
+            width: 100%;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .invoice {
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 2px solid #4CAF50;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .invoice-header, .invoice-footer {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .invoice table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .invoice table, .invoice th, .invoice td {
+            border: 1px solid #ddd;
+        }
+
+        .invoice th, .invoice td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .invoice th {
+            background-color: #f9f9f9;
+        }
+
+        .mobile-warning {
+            display: none;
+        }
+
+        @media (max-width: 1199px) {
+            .mobile-warning {
+                display: block;
+                text-align: center;
+                padding: 50px;
+                background-color: #f8d7da;
+                color: #721c24;
+                border: 1px solid #f5c6cb;
+                border-radius: 8px;
+                margin: 20px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .ad-space {
+                margin: 0 0 20px;
+            }
+        }
+        
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            padding: 20px;
+            background-color: #35424a;
+            color: white;
+            border-radius: 8px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mobile-warning">
+        <p>Please access this tool on a desktop for the best experience.</p>
+    </div>
+
+    <div class="container">
+        <div class="ad-space">
+            <p>3rd Party Advertisements</p>
+            <script type="text/javascript">
+                atOptions = {
+                    'key': '521ad64de186d0c9052d68abab4ec39a',
+                    'format': 'iframe',
+                    'height': 600,
+                    'width': 160,
+                    'params': {}
+                };
+            </script>
+            <script type="text/javascript" src="//releasedfinish.com/521ad64de186d0c9052d68abab4ec39a/invoke.js"></script>
+        </div>
+        <div class="content">
+            <h1>Free Hotel GST Invoice Generator</h1>
+            <h2>About Free Hotel GST Invoice Generator Tool</h2>
+            <p>The Free Hotel GST Invoice Generator is designed to simplify the process of creating detailed hotel invoices. Users can easily input hotel and guest information, including GST calculations, to generate professional invoices in a matter of minutes. This tool is ideal for hotel management, accounting, and revenue tracking.</p>
+
+            <h2>How to Use the Free Hotel GST Invoice Generator Tool</h2>
+            <ol>
+                <li>Enter the hotel name and GST number.</li>
+                <li>Fill in guest details such as name and GST number.</li>
+                <li>Specify the invoice number, check-in and check-out dates.</li>
+                <li>Input the room type and rate per night.</li>
+                <li>Select the currency (default is Rupees).</li>
+                <li>Click the "Generate Invoice" button to create your invoice.</li>
+                <li>Your invoice will appear below the form and will automatically download as an image.</li>
+            </ol>
+
+            <form id="invoiceForm" onsubmit="return false;">
+                <label for="hotelName">Hotel Name:</label>
+                <input type="text" id="hotelName" name="hotelName" required>
+
+                <label for="hotelGST">Hotel GST Number:</label>
+                <input type="text" id="hotelGST" name="hotelGST" required>
+
+                <label for="guestName">Guest Name:</label>
+                <input type="text" id="guestName" name="guestName" required>
+
+                <label for="customerGST">Customer GST Number:</label>
+                <input type="text" id="customerGST" name="customerGST" required>
+
+                <label for="invoiceNumber">Invoice Number:</label>
+                <input type="text" id="invoiceNumber" name="invoiceNumber" required>
+
+                <label for="checkinDate">Check-in Date:</label>
+                <input type="date" id="checkinDate" name="checkinDate" required>
+
+                <label for="checkoutDate">Check-out Date:</label>
+                <input type="date" id="checkoutDate" name="checkoutDate" required>
+
+                <label for="roomType">Room Type:</label>
+                <input type="text" id="roomType" name="roomType" required>
+
+                <label for="ratePerNight">Rate per Room per Night:</label>
+                <input type="number" id="ratePerNight" name="ratePerNight" step="0.01" required>
+
+                <label for="currency">Currency:</label>
+                <input type="text" id="currency" name="currency" value="Rupees" required>
+
+                <button type="button" onclick="generateInvoice()">Generate Invoice</button>
+            </form>
+
+            <div class="invoice" id="invoice">
+                <div class="invoice-header">
+                    <h2>Invoice</h2>
+                    <h3 id="invoiceHotelName"></h3>
+                    <p><strong>Hotel GST Number:</strong> <span id="invoiceHotelGST"></span></p>
+                </div>
+                <p align="left"><strong>Guest Name:</strong> <span id="invoiceGuestName"></span></p>
+                <p align="left"><strong>Customer GST Number:</strong> <span id="invoiceCustomerGST"></span></p>
+                <p align="left"><strong>Invoice Number:</strong> <span id="invoiceNumberDisplay"></span></p>
+                <p align="left"><strong>Check-in Date:</strong> <span id="invoiceCheckinDate"></span></p>
+                <p align="left"><strong>Check-out Date:</strong> <span id="invoiceCheckoutDate"></span></p>
+                <p align="left"><strong>Room Type:</strong> <span id="invoiceRoomType"></span></p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Quantity</th>
+                            <th>Unit Price (<span id="invoiceCurrency1"></span>)</th>
+                            <th>Total (<span id="invoiceCurrency2"></span>)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="invoiceDetails"></tbody>
+                </table>
+
+                <p align="right"><strong>CGST (6%):</strong> <span id="invoiceCGST"></span> <span id="invoiceCurrency3"></span></p>
+                <p align="right"><strong>SGST (6%):</strong> <span id="invoiceSGST"></span> <span id="invoiceCurrency4"></span></p>
+                <p align="right"><strong>Total Amount:</strong> <span id="invoiceTotal"></span> <span id="invoiceCurrency5"></span></p>
+
+                <div class="invoice-footer">
+                    <p>Thank you for staying with us!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+        function calculateNights(checkin, checkout) {
+            const date1 = new Date(checkin);
+            const date2 = new Date(checkout);
+            const diffTime = Math.abs(date2 - date1);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            return diffDays;
+        }
+
+        function generateInvoice() {
+            const hotelName = document.getElementById('hotelName').value;
+            const hotelGST = document.getElementById('hotelGST').value;
+            const guestName = document.getElementById('guestName').value;
+            const customerGST = document.getElementById('customerGST').value;
+            const invoiceNumber = document.getElementById('invoiceNumber').value;
+            const checkinDate = document.getElementById('checkinDate').value;
+            const checkoutDate = document.getElementById('checkoutDate').value;
+            const roomType = document.getElementById('roomType').value;
+            const ratePerNight = parseFloat(document.getElementById('ratePerNight').value);
+            const currency = document.getElementById('currency').value;
+
+            const nights = calculateNights(checkinDate, checkoutDate);
+            if (nights <= 0) {
+                alert("Check-out date must be after check-in date.");
+                return;
+            }
+            const totalRoomCharge = ratePerNight * nights;
+            const CGST = totalRoomCharge * 0.06;
+            const SGST = totalRoomCharge * 0.06;
+            const totalAmount = totalRoomCharge + CGST + SGST;
+
+            document.getElementById('invoiceHotelName').innerText = hotelName;
+            document.getElementById('invoiceHotelGST').innerText = hotelGST;
+            document.getElementById('invoiceGuestName').innerText = guestName;
+            document.getElementById('invoiceCustomerGST').innerText = customerGST;
+            document.getElementById('invoiceNumberDisplay').innerText = invoiceNumber;
+            document.getElementById('invoiceCheckinDate').innerText = checkinDate;
+            document.getElementById('invoiceCheckoutDate').innerText = checkoutDate;
+            document.getElementById('invoiceRoomType').innerText = roomType;
+
+            document.getElementById('invoiceCurrency1').innerText = currency;
+            document.getElementById('invoiceCurrency2').innerText = currency;
+            document.getElementById('invoiceCurrency3').innerText = currency;
+            document.getElementById('invoiceCurrency4').innerText = currency;
+            document.getElementById('invoiceCurrency5').innerText = currency;
+
+            let invoiceDetails = '';
+            for (let i = 1; i <= nights; i++) {
+                invoiceDetails += `
+                    <tr>
+                        <td>Room Charge - Night ${i}</td>
+                        <td>1</td>
+                        <td>${currency}${ratePerNight.toFixed(2)}</td>
+                        <td>${currency}${ratePerNight.toFixed(2)}</td>
+                    </tr>
+                `;
+            }
+            document.getElementById('invoiceDetails').innerHTML = invoiceDetails;
+            document.getElementById('invoiceCGST').innerText = CGST.toFixed(2);
+            document.getElementById('invoiceSGST').innerText = SGST.toFixed(2);
+            document.getElementById('invoiceTotal').innerText = totalAmount.toFixed(2);
+
+            document.getElementById('invoice').style.display = 'block';
+
+            html2canvas(document.getElementById('invoice')).then(canvas => {
+                const link = document.createElement('a');
+                link.download = 'invoice.png';
+                link.href = canvas.toDataURL();
+                link.click();
+            });
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2024 Magical Hotel Invoice Generator. All Rights Reserved.</p>
+        <p>For support, contact us at support@magicalhotel.com</p>
+    </footer>
+</body>
+
+</html>
